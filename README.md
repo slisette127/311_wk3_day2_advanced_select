@@ -35,6 +35,11 @@ ORDER BY usersAddress.state
 
 2. Find the most popular area code in the `usersContact` table. 
   * Hint: SUBSTR, GROUP BY
+  *SELECT usersContact.phone1, SUBSTR(phone1, 1, 3),
+	usersContact.phone2, SUBSTR(phone2, 1, 3),
+COUNT(phone1 + phone2)
+FROM usersContact
+GROUP BY usersContact.phone1, usersContact.phone2
 
 3. Find the MIN first_name, the county, and a count of all users in that county for counties with more than 10 users. There will be four results. List the last one. 
   * Hint: MIN, COUNT, JOIN, GROUP BY, HAVING
@@ -49,7 +54,7 @@ ORDER BY usersAddress.state
   * WY: 3
 
 2.
-  * Area code:
+  * Area code: 973
 
 3.
   * first_name:
