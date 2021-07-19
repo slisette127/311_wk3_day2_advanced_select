@@ -43,6 +43,17 @@ GROUP BY usersContact.phone1, usersContact.phone2
 
 3. Find the MIN first_name, the county, and a count of all users in that county for counties with more than 10 users. There will be four results. List the last one. 
   * Hint: MIN, COUNT, JOIN, GROUP BY, HAVING
+  *SELECT users.id, 
+users.first_name, 
+usersAddress.id,
+usersAddress.county,
+COUNT (usersAddress.county)
+FROM users, usersAddress
+INNER JOIN idCounty
+ON users.id = usersAddress.county
+WHERE users.id = usersAddress.id
+GROUP BY id, users.first_name, usersAddress.county
+HAVING users > 10
 
 
 ## Query Responses
